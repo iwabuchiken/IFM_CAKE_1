@@ -58,13 +58,16 @@ def set_conf
   #
   #==============================  
 
-  r1 = /^DocumentRoot/
+  r1 = /^DocumentRoot (.+)/
+  # r1 = /^DocumentRoot (.+?)/
+  # r1 = /^DocumentRoot "(.+?)"/
   
-  s2 = '<Directory "C:/WORKS/WS/cakephp-2.3.1">'
-  s2_new = "<Directory \"#{project_path}\">"
+  # s2 = '<Directory "C:/WORKS/WS/cakephp-2.3.1">'
+  # s2_new = "<Directory \"#{project_path}\">"
   
-  r2 = /^#{s2}/
+  # r2 = /^#{s2}/
   
+  orig_root = ""
   
   w1 = "DocumentRoot"
   
@@ -74,12 +77,17 @@ def set_conf
     
       if r1 =~ line
           
-          new_lines << w1 + " " + project_path
+          puts "r1 detected: " + line
+          
+          new_lines <<  "#{w1} #{project_path}\n"
+          # new_lines <<  "#{w1} \"#{project_path}\""
+          # new_lines << w1 + " " + project_path
+          orig_root = "#{$1}"
           # new_lines << w1 + " " + project_name
       
-      elsif r2 =~ line
-        
-          new_lines << s2_new
+      # elsif r2 =~ line
+#         
+          # new_lines << s2_new
         
       else
         
@@ -88,9 +96,48 @@ def set_conf
       end
   }  
 
+  puts "orig_root=" + orig_root
+  
+  if orig_root == ""
+    
+    puts "Exit."
+    
+    return
+    
+  end
   #==============================
   #
   # 3. Directory
+  #
+  #==============================
+  final_lines = []
+  
+  r2 = /^<Directory "#{orig_root.split("\\").join("\\\\")}">/
+  # r2 = /^<Directory "#{orig_root}">/
+  
+  puts "r2.source=" + r2.source
+  
+  new_lines.each {|line|
+    
+      if (r2 =~ "#{line}") != nil
+      # if (r2 =~ line) != nil
+      # if r2 =~ line
+          
+          puts "r2 detected: " + line
+          
+          final_lines << "<Directory \"#{project_path}\">\n"
+          # final_lines << "<Directory \"#{project_path}\">\n"
+            
+      else
+        
+          final_lines << line
+        
+      end
+  }    
+  
+  #==============================
+  #
+  # Directory
   #
   #==============================  
     
@@ -99,10 +146,13 @@ def set_conf
   # New file
   #
   #==============================
-  f = open(fpath + "_new", "w")
+  f = open(fpath, "w")
+  # f = open(fpath + ".new", "w")
+  # f = open(fpath + "_new", "w")
   # f = open(fpath, "a")
   
-  new_lines.each {|line|
+  final_lines.each {|line|
+  # new_lines.each {|line|
       
       f.write(line)
       
