@@ -9,6 +9,7 @@
 
 <hr />
 
+<!-- REF 50% http://stackoverflow.com/questions/821399/use-css-to-make-an-image-scale-up-and-down answered May 4 '09 at 19:05 -->
 <img src="<?php echo "http://benfranklin.chips.jp/images/".$file_name ?>" style="width: 50%; height: 50%"/>
 <!-- <img src="<?php echo "http://benfranklin.chips.jp/images/".$file_name ?>" /> -->
 <!-- <img src="<?php echo "http://benfranklin.chips.jp/images/".$file_name ?>" width="300" height="300" /> -->

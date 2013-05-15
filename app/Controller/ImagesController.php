@@ -4,7 +4,15 @@ class ImagesController extends AppController {
 
 
 	public function index() {
-		$this->set('images', $this->Image->find('all'));
+		
+		$images = $this->Image->find('all');
+		
+// 		$this->_write_log(get_class($images[0]), __FILE__, __LINE__);	//=> get_class() expects parameter 1 to be object, array given
+// 		$this->_write_log($images[0]['Image']['file_name'], __FILE__, __LINE__);	//=> "a" abc
+// 		$this->_write_log($images['file_name'], __FILE__, __LINE__);	//=> Undefined index: file_name
+		
+		$this->set('images', $images);
+// 		$this->set('images', $this->Image->find('all'));
 		
 		//debug
 		$this->_write_log(time(), basename(__FILE__), __LINE__);
@@ -79,25 +87,59 @@ class ImagesController extends AppController {
 	
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->Image->create();
-			if ($this->Image->save($this->request->data)) {
-				//debug
-				// REF array size http://idea-tech.sakura.ne.jp/blog/2007/05/post_24.php
-				//     			$this->_write_log(count($this->request->data), __FILE__, __LINE__);
-				// REF basename http://php.net/manual/ja/function.basename.php
-				$this->_write_log(
-						"count(\$this->request->data)=".count($this->request->data),
-						basename(__FILE__), __LINE__);	//=> 1
-// 				$this->_write_log(
-// 						get_class($this->request->data[0]),
-// 						basename(__FILE__), __LINE__);	//=> ImagesController
-				 
-				 
-				$this->Session->setFlash('Your post has been saved.');
-				$this->redirect(array('action' => 'index'));
-				 
+			if($this->request->data != null) {
+				$this->Image->create();
+				if ($this->Image->save($this->request->data)) {
+					//debug
+					// REF array size http://idea-tech.sakura.ne.jp/blog/2007/05/post_24.php
+					//     			$this->_write_log(count($this->request->data), __FILE__, __LINE__);
+					// REF basename http://php.net/manual/ja/function.basename.php
+					$this->_write_log(
+							"count(\$this->request->data)=".count($this->request->data),
+							basename(__FILE__), __LINE__);	//=> 1
+					
+					
+	// 				if ($this->request->data != null) {
+					
+	// 					$this->_write_log(
+	// 							"get_class(\$this->request->data)=".get_class($this->request->data['Image']['file_name']),
+	// // 							"get_class(\$this->request->data)=".get_class($this->request->data[0]),
+	// 							basename(__FILE__), __LINE__);	//=> 1
+						
+	// 				} else {
+					
+	// 				}//if ($this->request->data != null)
+					
+	// 				if ($this->request->data[Image] != null) {
+					
+	// 					$this->_write_log(
+	// 							"\$this->request->data[Image]=".$this->request->data[Image],
+	// 							basename(__FILE__), __LINE__);	//=> 1
+					
+	// 				} else {
+						
+	// 					$this->_write_log(
+	// 							"\$this->request->data[Image] => null",
+	// 							basename(__FILE__), __LINE__);	//=> 1
+					
+	// 				}//if ($this->request->data[0] != null)
+	// 				$this->_write_log(
+	// 						get_class($this->request->data[0]),
+	// 						basename(__FILE__), __LINE__);	//=> ImagesController
+					 
+					 
+					$this->Session->setFlash('Your post has been saved.');
+					$this->redirect(array('action' => 'index'));
+					 
+				} else {
+					$this->Session->setFlash('Unable to add your post.');
+				}
 			} else {
-				$this->Session->setFlash('Unable to add your post.');
+				
+				$this->_write_log(
+						"\$this->request->data => null",
+						basename(__FILE__), __LINE__);	//=> 1
+				
 			}
 		}//if ($this->request->is('post')) {
 		 
@@ -108,5 +150,7 @@ class ImagesController extends AppController {
 		$this->set('file_name', $file_name);
 		
 	}//public function show_image($file_name = null)
+	
+	
 	
 }//class ImagesController extends AppController

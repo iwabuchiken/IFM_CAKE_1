@@ -1,4 +1,6 @@
 a
+a p && pushd C:\WORKS\WS\Cake\IFM_CAKE_1 && gitk
+
 pushd C:\WORKS\WS\Cake\IFM_CAKE_1 && gitk
 
 pushd C:\WORKS\WS\Cake\IFM_CAKE_1

@@ -46,3 +46,143 @@
 
 [ImagesController.php:10] "a" 1368536551
 
+[ImagesController.php:10] "a" 1368537241
+
+[ImagesController.php:10] "a" 1368537490
+
+[ImagesController.php:10] "a" 1368537502
+
+[ImagesController.php:10] "a" 1368537662
+
+[ImagesController.php:10] "a" 1368537699
+
+[ImagesController.php:10] "a" 1368575599
+
+[ImagesController.php:90] "a" count($this->request->data)=1
+
+[ImagesController.php:10] "a" 1368575675
+
+[ImagesController.php:90] "a" count($this->request->data)=1
+
+[ImagesController.php:102] "a" $this->request->data[0] => null
+
+[ImagesController.php:10] "a" 1368576824
+
+[ImagesController.php:90] "a" count($this->request->data)=1
+
+[ImagesController.php:96] "a" $this->request->data[Image]=Array
+
+[ImagesController.php:90] "a" count($this->request->data)=1
+
+[ImagesController.php:97] "a" get_class($this->request->data)=
+
+[ImagesController.php:107] "a" $this->request->data[Image]=Array
+
+[ImagesController.php:90] "a" count($this->request->data)=1
+
+[ImagesController.php:97] "a" get_class($this->request->data)=ImagesController
+
+[ImagesController.php:107] "a" $this->request->data[Image]=Array
+
+[ImagesController.php:90] "a" count($this->request->data)=1
+
+[ImagesController.php:98] "a" get_class($this->request->data)=
+
+[ImagesController.php:108] "a" $this->request->data[Image]=Array
+
+[ImagesController.php:90] "a" count($this->request->data)=1
+
+[ImagesController.php:98] "a" get_class($this->request->data)=
+
+[ImagesController.php:108] "a" $this->request->data[Image]=Array
+
+[ImagesController.php:91] "a" count($this->request->data)=1
+
+[ImagesController.php:10] "a" 1368578069
+
+[ImagesController.php:91] "a" count($this->request->data)=1
+
+[ImagesController.php:10] "a" 1368578088
+
+[ImagesController.php:10] "a" 1368589874
+
+[ImagesController.php:10] "a" 1368589919
+
+[ImagesController.php:10] "a" 1368589942
+
+[ImagesController.php:10] "a" 1368589981
+
+[ImagesController.php:10] "a" 1368589989
+
+[ImagesController.php:10] "a" 1368590010
+
+[ImagesController.php:10] "a" 1368590033
+
+[ImagesController.php:10] "a" 1368590054
+
+[ImagesController.php:10] "a" 1368590062
+
+[ImagesController.php:10] "a" 1368590081
+
+[ImagesController.php:10] "a" 1368590095
+
+[ImagesController.php:10] "a" 1368590109
+
+[ImagesController.php:10] "a" 1368590121
+
+[ImagesController.php:10] "a" 1368590133
+
+[ImagesController.php:10] "a" 1368590161
+
+[ImagesController.php:10] "a" 1368590177
+
+[ImagesController.php:10] "a" 1368590246
+
+[ImagesController.php:10] "a" 1368590263
+
+[ImagesController.php:10] "a" 1368590281
+
+[ImagesController.php:10] "a" 1368590300
+
+[ImagesController.php:10] "a" 1368590486
+
+[ImagesController.php:10] "a" 1368590510
+
+[ImagesController.php:10] "a" 1368590607
+
+[ImagesController.php:10] "a" 1368590746
+
+[ImagesController.php:10] "a" 1368590774
+
+[ImagesController.php:10] "a" 1368590914
+
+[ImagesController.php:10] "a" 1368590960
+
+[ImagesController.php:10] "a" 1368590989
+
+[ImagesController.php:10] "a" 1368591009
+
+[ImagesController.php:10] "a" 1368591339
+
+[ImagesController.php:13] "a" 1368591475
+
+[C:\WORKS\WS\Cake\IFM_CAKE_1\app\Controller\ImagesController.php:10] "a" 
+
+[ImagesController.php:16] "a" 1368591528
+
+[C:\WORKS\WS\Cake\IFM_CAKE_1\app\Controller\ImagesController.php:10] "a" 
+
+[ImagesController.php:16] "a" 1368591549
+
+[C:\WORKS\WS\Cake\IFM_CAKE_1\app\Controller\ImagesController.php:11] "a" 
+
+[ImagesController.php:17] "a" 1368591847
+
+[C:\WORKS\WS\Cake\IFM_CAKE_1\app\Controller\ImagesController.php:11] "a" 
+
+[ImagesController.php:18] "a" 1368591925
+
+[C:\WORKS\WS\Cake\IFM_CAKE_1\app\Controller\ImagesController.php:11] "a" abc
+
+[ImagesController.php:18] "a" 1368591939
+
